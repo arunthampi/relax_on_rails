@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-12.text-center
+      %h1 Relax On Rails
+
+  .row
+    .col-md-12
+      %h3 My Teams
+      %ul
+        - @teams.each do |team|
+          %li= link_to team.name, team_path(team)
+
