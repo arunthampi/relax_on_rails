@@ -8,6 +8,10 @@ class Team < ActiveRecord::Base
 
   validates_url :url, no_local: true, allow_nil: true
 
+  def to_param
+    self.uid
+  end
+
   def import_users!
     return if bot.blank?
 
